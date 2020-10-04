@@ -77,6 +77,7 @@ class _SportsScreen2State extends State<SportsScreen2> {
                   margin: EdgeInsets.only(top: 5),
                   height: MediaQuery.of(context).size.height,
                   child: new ListView.builder(
+                      physics: NeverScrollableScrollPhysics(),
                       itemCount: departmentList.departmentItems.length,
                       itemBuilder: (BuildContext context, int index) {
                         return Container(
