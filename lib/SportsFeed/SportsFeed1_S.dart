@@ -27,8 +27,8 @@ SportsFeedList sportsFeedList = SportsFeedList(sportsItems: [
   ),
   SportsFeed(
     url:
-    'lib/asset/hockey.jpg',
-    categoryName: "Hockey",
+    'lib/asset/basketball.jpg',
+    categoryName: "FootBall",
     liked: 200,
     description:
     "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.",
@@ -36,8 +36,96 @@ SportsFeedList sportsFeedList = SportsFeedList(sportsItems: [
   SportsFeed(
     url:
     'lib/asset/throwball.jpg',
-    categoryName: "ThrowBall",
+    categoryName: "Throwball",
     liked: 200,
+    description:
+    "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.",
+  ),
+  SportsFeed(
+    url:
+    'lib/asset/table taniss.jpg',
+    categoryName: "Cricket",
+    liked: 20,
+    description:
+    "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.",
+  ),
+  SportsFeed(
+    url:
+    'lib/asset/star-india.jpg',
+    categoryName: "throwball.jpg",
+    liked: 200,
+    description:
+    "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.",
+  ),
+  SportsFeed(
+    url:
+    'lib/asset/criket.jpg',
+    categoryName: "Cricket",
+    liked: 20,
+    description:
+    "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.",
+  ),
+  SportsFeed(
+    url:
+    'lib/asset/basketball.jpg',
+    categoryName: "FootBall",
+    liked: 200,
+    description:
+    "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.",
+  ),
+  SportsFeed(
+    url:
+    'lib/asset/badminton.jpg',
+    categoryName: "Badminton",
+    liked: 200,
+    description:
+    "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.",
+  ),
+  SportsFeed(
+    url:
+    'lib/asset/criket.jpg',
+    categoryName: "Cricket",
+    liked: 20,
+    description:
+    "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.",
+  ),
+  SportsFeed(
+    url:
+    'lib/asset/basketball.jpg',
+    categoryName: "FootBall",
+    liked: 200,
+    description:
+    "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.",
+  ),
+  SportsFeed(
+    url:
+    'lib/asset/badminton.jpg',
+    categoryName: "Badminton",
+    liked: 200,
+    description:
+    "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.",
+  ),
+  SportsFeed(
+    url:
+    'lib/asset/criket.jpg',
+    categoryName: "Cricket",
+    liked: 20,
+    description:
+    "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.",
+  ),
+  SportsFeed(
+    url:
+    'lib/asset/basketball.jpg',
+    categoryName: "FootBall",
+    liked: 200,
+    description:
+    "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.",
+  ),
+  SportsFeed(
+    url:
+    'lib/asset/criket.jpg',
+    categoryName: "Cricket",
+    liked: 20,
     description:
     "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.",
   ),

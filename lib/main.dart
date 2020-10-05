@@ -2,7 +2,6 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:hori_vert2/Drawer/drawer.dart';
 import 'package:hori_vert2/NewsFeed/NewsFeed1_S.dart';
 import 'package:hori_vert2/NewsFeed/NewsFeed2_S.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter/material.dart';
 import 'package:hori_vert2/SportsFeed/SportsFeed1_S.dart';
 import 'package:hori_vert2/SportsFeed/SportsFeed2_S.dart';
@@ -20,10 +19,12 @@ class Hori_Vert extends StatefulWidget {
 class _Hori_VertState extends State<Hori_Vert> {
   Image _image = Image.asset(newsFeedList.feedItems[1].url);
   bool _loading = true;
+  int _length=sportsFeedList.sportsItems.length;
 
   @override
   void initState() {
     super.initState();
+    debugPrint(_length.toString());
     _image.image.resolve(ImageConfiguration()).addListener(
         ImageStreamListener((ImageInfo image, bool synchronousCall) {
       if (mounted) setState(() => _loading = false);
@@ -34,7 +35,10 @@ class _Hori_VertState extends State<Hori_Vert> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(
-        title: Text("SSUET SPORTS",style: TextStyle(fontSize: 30),),
+        title: Text(
+          "SSUET SPORTS",
+          style: TextStyle(fontSize: 30),
+        ),
         backgroundColor: Colors.purple[900],
         centerTitle: true,
       ),
@@ -55,14 +59,13 @@ class _Hori_VertState extends State<Hori_Vert> {
             child: SingleChildScrollView(
               child: Container(
                 alignment: Alignment.topCenter,
-                height: 330,
                 margin: const EdgeInsets.all(0.1),
                 padding: const EdgeInsets.all(0.1),
                 decoration:
                     BoxDecoration(border: Border.all(color: Colors.black)),
                 child: CarouselSlider(
                   options: CarouselOptions(
-                    aspectRatio: 1.2,
+                    aspectRatio: 1.0,
                     viewportFraction: 1.0,
                     autoPlay: false,
                     enlargeCenterPage: true,
@@ -70,36 +73,51 @@ class _Hori_VertState extends State<Hori_Vert> {
                   items: newsFeedList.feedItems
                       .map(
                         (item) => Container(
+                           color: Colors.white,
                             child: GestureDetector(
                           child: Stack(
+                            overflow: Overflow.clip,
                             children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  _loading
-                                      ? Center(
-                                          child: SizedBox(
-                                            height: 200,
-                                            width: 200,
-                                            child: CircularProgressIndicator(
-                                              backgroundColor:
-                                                  Colors.brown.shade800,
-                                            ),
+                              Container(
+                                child: _loading
+                                    ? Center(
+                                        child: SizedBox(
+                                          height: 200,
+                                          width: 200,
+                                          child: CircularProgressIndicator(
+                                            backgroundColor:
+                                                Colors.brown.shade800,
                                           ),
-                                        )
-                                      : Image.asset(item.url,
-                                          width:
-                                              MediaQuery.of(context).size.width),
-                                  Text(
-                                    item.categoryName,
-                                    textAlign: TextAlign.left,
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold),
+                                        ),
+                                      )
+                                    : Image.asset(item.url,
+                                        width:
+                                            MediaQuery.of(context).size.width),
+                              ),
+                              Align(
+
+                                alignment: FractionalOffset(0.1, 0.9),
+                                child: Container(
+
+                                  padding: EdgeInsets.all(5.0),
+                                  alignment: Alignment.bottomCenter,
+
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        item.categoryName,
+                                        textAlign: TextAlign.left,
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      Flexible(child: Text(item.description)),
+                                    ],
                                   ),
-                                  Flexible(child: Text(item.description)),
-                                ],
+                                ),
                               ),
                             ],
                           ),
@@ -163,55 +181,49 @@ class _Hori_VertState extends State<Hori_Vert> {
           SliverGrid(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
-              childAspectRatio: 1.5,
+              childAspectRatio: 1.4,
             ),
-            delegate:
-                SliverChildBuilderDelegate((context, index) => GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => SportsScreen2(
-                                    newsFeedList.feedItems[index].url,
-                                    newsFeedList.feedItems[index].categoryName,
-                                    newsFeedList.feedItems[index].liked,
-                                    newsFeedList.feedItems[index].description)));
-                      },
-                      child: Stack(
-                        children: [
-                          Container(
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage(
-                                    sportsFeedList.sportsItems[index].url),
-                                fit: BoxFit.fill,
-                              ),
-                            ),
-                            margin: EdgeInsets.all(5.0),
-                          ),
-                          Align(
-                              alignment: FractionalOffset(0.1, 0.9),
-                              child: Text(
-                            newsFeedList.feedItems[index].categoryName,
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
-                          ))
-                        ],
+            delegate: SliverChildBuilderDelegate(
+              (context, index) => GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => SportsScreen2(
+                              newsFeedList.feedItems[index].url,
+                              newsFeedList.feedItems[index].categoryName,
+                              newsFeedList.feedItems[index].liked,
+                              newsFeedList.feedItems[index].description)));
+                },
+                child: Stack(
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image:
+                              AssetImage(sportsFeedList.sportsItems[index].url),
+                          fit: BoxFit.fill,
+                        ),
                       ),
+                      margin: EdgeInsets.all(5.0),
                     ),
-                  childCount: newsFeedList.feedItems.length,
+                    Align(
+                        alignment: FractionalOffset(0.1, 0.9),
+                        child: Text(
+                          sportsFeedList.sportsItems[index].categoryName,
+                          style: TextStyle(
+                              color: Colors.white, fontWeight: FontWeight.bold),
+                        ))
+                  ],
                 ),
+              ),
+              childCount: sportsFeedList.sportsItems.length,
+            ),
           ),
-
         ],
       ),
       drawer: Drawerr(),
     );
   }
+
 }
-
-
-
-
-

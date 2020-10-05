@@ -27,7 +27,7 @@ class _DrawerrState extends State<Drawerr> {
                             color: Colors.white,
                             shape: BoxShape.circle,
                             image: DecorationImage(
-                                image: NetworkImage('asset/thug of war.jpg'),
+                                image: AssetImage('lib/asset/football.jpg'),
                                 scale: 1.0,
                                 fit: BoxFit.fill),
                           ),
