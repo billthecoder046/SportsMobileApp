@@ -190,10 +190,10 @@ class _Hori_VertState extends State<Hori_Vert> {
                       context,
                       MaterialPageRoute(
                           builder: (context) => SportsScreen2(
-                              newsFeedList.feedItems[index].url,
-                              newsFeedList.feedItems[index].categoryName,
-                              newsFeedList.feedItems[index].liked,
-                              newsFeedList.feedItems[index].description)));
+                              sportsFeedList.sportsItems[index].url,
+                              sportsFeedList.sportsItems[index].categoryName,
+                              sportsFeedList.sportsItems[index].liked,
+                              sportsFeedList.sportsItems[index].description)));
                 },
                 child: Stack(
                   children: [
